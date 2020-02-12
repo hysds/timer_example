@@ -81,8 +81,9 @@ def main(path, count):
 
     try:
         evaluate(path, count)
-    except Exception as e:
+    except ConditionNotMetError as e:
         logger.error(str(e))
+        logger.error("Continuing on without non-zero exit code.")
 
 
 if __name__ == "__main__":
